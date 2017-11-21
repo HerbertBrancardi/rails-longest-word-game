@@ -1,0 +1,35 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <h1>Games#new</h1>
+  <div id="container">
+    <p>
+      <ul class="list-inline">
+        <% @letters.each do |letter| %>
+          <li>
+            <%=letter%>
+          </li>
+        <% end %>
+      </ul>
+    </p>
+  </div>
+
+  <div>
+
+    <form action="/score" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" name="word" placeholder="Suggested word?">
+      <input type="submit">
+    </form>
+
+
+
+  </div>
+
+</body>
+
+
+
+
